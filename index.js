@@ -85,19 +85,7 @@ module.exports = function(connect) {
       _this.client = client;
       _this.db = db;
 
-      db.
-        collection(options.collection).
-        createIndex({ expires: 1 }, { expireAfterSeconds: 0 }, function(error) {
-          if (error) {
-            const e = new Error('Error creating index: ' + error.message);
-            return _this._errorHandler(e, callback);
-          }
-
-          _this._emitter.emit('connected');
-
-          return callback && callback();
-        });
-    });
+   });
   };
 
   MongoDBStore.prototype = Object.create(Store.prototype);
